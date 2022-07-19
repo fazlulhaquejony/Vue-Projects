@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+    <div id="app">
+    <h3>To Do List</h3>
+    <form @submit.prevent="onClick">
+        <h2>Tasks</h2>
+        <ul>
+            <li v-for="item in items"  >
+                {{item.work}}-<input v-model="item.time">
+            </li>
+            <button>Add</button>
+        
+        </ul>
+    </form>
+</div>
+    <script>
+    new Vue({
+        el:"#app",
+        data:{ items:[
+            {work:'wake up', time:'7:00am'}
+            
+        ],
+      
+        
+    },
+    methods:{
+        onClick()
+        {
+            this.items.push({work:"abc",
+                 time:"wait"})
+        }
+    }
+
+    })
+    </script>
+
+    
+
+</body>
+</html>
